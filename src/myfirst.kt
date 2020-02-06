@@ -1,18 +1,27 @@
-fun main(args:Array<String>){
-    var student=Student("Sriyank",10)
-    print(student.id)
+fun main(args: Array<String>) {
+ var dog = Dog()
+    dog.bread= "labrado"
+    dog.color = "Cream"
+
+    dog.bark()
+    dog.eat()
 }
 
-class Student(_name:String){
-    var name :String="dummy"
-    var id:Int= -1
-    init {
-        this.name=_name
-        println("Name is ${name}")
+open class Animal() {
+    var color: String = ""
+    fun eat() {
+        println("Animal eats")
     }
+}
 
-    constructor(name:String,id:Int):this(name){
-        this.id=id
+class Dog:Animal() {
+    var bread: String = ""
+    fun bark() {
+    }
+}
 
+class Cat:Animal() {
+    var age: Int = -1
+    fun meow() {
     }
 }
