@@ -1,40 +1,18 @@
 fun main(args: Array<String>) {
- var dog = Dog()
+    var dog = Dog("black","Pub")
 
-    dog.bark()
-    dog.eat()
-
-    var cat = Cat()
-    cat.eat()
-
-    println(dog.color)
 }
 
-open class Animal() {
-    open var color: String = "White"
-    open fun eat() {
-        println("Animal eats")
-    }
+open class Animal( var color:String) {
+init {
+    println("From the animal init $color")
+}
 }
 
-class Dog:Animal() {
-    override var color:String = "Black"
-    var bread: String = ""
-    fun bark() {
-    }
-
-   override fun eat() {
-        println("Dog eats")
-    }
+class Dog( color:String,var bread:String) : Animal("Black") {
+init {
+    println("From dog init: $color and $bread")
+}
 }
 
-class Cat:Animal() {
-    var age: Int = -1
-    fun meow() {
-    }
 
-    override fun eat() {
-        super<Animal>.eat()
-        println("Cat eats")
-    }
-}
